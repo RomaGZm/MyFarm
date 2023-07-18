@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Core.Interfaces;
 using Core.Player.Tools;
+using Core.UI;
 
 namespace Core.Player
 {
@@ -16,7 +17,10 @@ namespace Core.Player
         private PlayerAnimation playerAnimation;
         [SerializeField]
         private ToolsController toolsController;
+
         public DetectionZone detectionZone;
+        public PlayerStamina playerStamina;
+
         [Header("Datas")]
         public PlayerData playerData;
         [Header("Move")]
@@ -28,6 +32,7 @@ namespace Core.Player
         }
 
         
+        
         void Update()
         {
             float h = Input.GetAxis("Horizontal");
@@ -37,6 +42,12 @@ namespace Core.Player
             Vector3 vect = new Vector3(h, v, 0);
             vect = vect.normalized * moveSpeed * Time.deltaTime;
             rb2D.MovePosition(rb2D.transform.position + vect);
+
+
+            if (Input.GetKeyDown(playerData.inputParam.keyAction))
+            {
+
+            }
         }
 
      

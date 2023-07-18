@@ -6,12 +6,11 @@ using UnityEngine.Events;
 using System;
 using Core.Player.Tools;
 
+
 namespace Core.UI
 {
     public class ToolsUI : MonoBehaviour, Initialize
     {
-
-       
 
         [Header("Buttons")]
         [SerializeField]
@@ -26,9 +25,20 @@ namespace Core.UI
         private ButtonTool btnWither;
         [Header("Events")]
         public UnityEvent<ToolsController.ToolType> btnToolClick;
+
+
         public void Init()
         {
            
+        }
+
+        public void UpdateToolsPrice(int ground, int seed, int watering, int harvest,int wither)
+        {
+            btnGround.SetPrice(ground);
+            btnSeed.SetPrice(seed);
+            btnWatering.SetPrice(watering);
+            btnHarvest.SetPrice(harvest);
+            btnWither.SetPrice(wither);
         }
 
         private void ResetSelectedButtons()

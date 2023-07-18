@@ -6,18 +6,23 @@ using UnityEngine;
 public class PlayerData : ScriptableObject
 {
     [System.Serializable]
-    public class DetectionZoneParam
+    public class InputParam
     {
-        // Ground, Seed, Watering, Harvest, Wither
-        public float groundRadius;
-        public float seedRadius;
-        public float wateringRadius;
-        public float harvestRadius;
-        public float witherRadius;
-
+        public KeyCode keyAction = KeyCode.E;
+        public KeyCode keyEndDay = KeyCode.Space;
 
     }
+    [System.Serializable]
+    public class StaminaParam
+    {
+        public float staminaMin;
+        public float staminaMax;
+        public float walkDec;
+        public float walkInc;
+    }
 
-    public DetectionZoneParam detectionZoneParam;
+    public InputParam inputParam;
+    public StaminaParam staminaParam;
+
 
 }
