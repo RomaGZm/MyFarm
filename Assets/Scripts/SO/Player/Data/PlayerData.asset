@@ -12,9 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33a08b8cc19e31a498ec844cabd2abf8, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  detectionZoneParam:
-    groundRadius: 1
-    seedRadius: 2
-    wateringRadius: 3
-    harvestRadius: 4
-    witherRadius: 5
+  inputParam:
+    keyAction: 101
+    keyEndDay: 32
+    keyWalkForward: 119
+    keyWalkBack: 115
+    keyWalkLeft: 97
+    keyWalkRight: 100
+  staminaParam:
+    staminaMin: 0
+    staminaMax: 1000
+    walkEnergyRecovery_min: 1
+    walkEnergyLoss_min: 1

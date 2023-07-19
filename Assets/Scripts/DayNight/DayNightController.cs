@@ -11,7 +11,7 @@ namespace Core.DayNight
     public class DayNightController : MonoBehaviour, Initialize
     {
         [Header("Time")]
-        public float speed = 1;
+        public float incTime = 1;
         public int seconds = 0;
         public int minutes = 0;
         public int hours = 0;
@@ -19,6 +19,7 @@ namespace Core.DayNight
         public UnityEvent<int> timerSecond;
         public UnityEvent<int> timerMinute;
         public UnityEvent<int> timerHour;
+
         public void Init()
         {
             StartCoroutine(Timer());
@@ -26,23 +27,24 @@ namespace Core.DayNight
 
         private IEnumerator Timer()
         {
+            int tempSec = 0;
             int tempMin = 0;
-            int tempHour = 0;
             while (true)
             {
-                yield return new WaitForSeconds(speed);
+                yield return new WaitForSeconds(incTime);
                 TimeSpan time = TimeSpan.FromSeconds(seconds);
                 seconds++;
-                tempMin++;
+                tempSec++;
                 timerSecond?.Invoke(seconds);
-                if (tempMin >= 60)
+                if (tempSec >= 60)
                 {
-                    tempMin = 0;
-                    tempHour++;
+                    tempSec = 0;
+                    tempMin++;
                     timerMinute?.Invoke(time.Minutes);
-                    if(tempHour >= 60)
+                    if(tempMin >= 60)
                     {
-                        tempHour = 0;
+                        tempMin = 0;
+                        
                         timerHour?.Invoke(time.Hours);
                     }
                 }

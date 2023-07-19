@@ -13,7 +13,7 @@ namespace Core.UI
         public void SetProgress(float minValue, float maxValue, float value)
         {
             slider.minValue = minValue;
-            slider.minValue = maxValue;
+            slider.maxValue = maxValue;
             slider.value = value;
         }
     }

@@ -100,8 +100,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -226,9 +226,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animFromValue: 0
-  animToValue: 1
-  speed: 0.3
-  scaleFromValue: 0.1
+  animToValue: 150
+  speed: 50
+  scaleFromValue: 0.3
   scaleToValue: 1
-  scaleSpeed: 0.3
+  scaleSpeed: 1
   tmp_text: {fileID: 1443577757820278546}

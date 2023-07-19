@@ -17,7 +17,8 @@ namespace Core.Player
         }
         public void SetRadius(float radius)
         {
-            spriteRadius.transform.localScale = new Vector3(radius, radius, 1);
+            spriteRadius.transform.localScale = new Vector3(radius*2, radius*2, 1);
+            gameObject.SetActive(true);
         }
         public void SetColor(Color color)
         {

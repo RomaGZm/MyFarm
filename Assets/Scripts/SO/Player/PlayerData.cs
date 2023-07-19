@@ -10,6 +10,10 @@ public class PlayerData : ScriptableObject
     {
         public KeyCode keyAction = KeyCode.E;
         public KeyCode keyEndDay = KeyCode.Space;
+        public KeyCode keyWalkForward = KeyCode.W;
+        public KeyCode keyWalkBack = KeyCode.S;
+        public KeyCode keyWalkLeft = KeyCode.A;
+        public KeyCode keyWalkRight = KeyCode.D;
 
     }
     [System.Serializable]
@@ -17,12 +21,12 @@ public class PlayerData : ScriptableObject
     {
         public float staminaMin;
         public float staminaMax;
-        public float walkDec;
-        public float walkInc;
+        public float walkEnergyRecovery_min;
+        public float walkEnergyLoss_min;
     }
 
     public InputParam inputParam;
     public StaminaParam staminaParam;
 
-
+   
 }

@@ -34,6 +34,7 @@ namespace Core.Tiles
         public void Init()
         {
             tileType = TileType.Sand;
+            plant?.Init();
         }
 
        

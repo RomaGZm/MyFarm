@@ -13,6 +13,7 @@ namespace Core.Tiles
 
         [Header("Data")]
         public TileData tileData;
+        public PlantsData plantsData;
 
         public void Init()
         {

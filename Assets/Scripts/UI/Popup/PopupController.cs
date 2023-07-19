@@ -19,9 +19,9 @@ namespace Core.UI
                 damagePullList.Add(Instantiate(damagePullPref, transform));
         }
 
-        public void ShowPopup(Transform target, string text, Popup.Direction direction, Color textColor)
+        public void ShowPopup(Transform target, string text, Popup.Direction direction, Color textColor, Vector2 randomMin, Vector2 randomMax)
         {
-            GetPullObject().GetComponent<Popup>().Show(target, text, direction, textColor);
+            GetPullObject().GetComponent<Popup>().Show(target, text, direction, textColor, randomMin, randomMax);
         }
 
         private GameObject GetPullObject()

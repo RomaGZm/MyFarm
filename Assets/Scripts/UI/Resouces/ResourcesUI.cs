@@ -10,17 +10,12 @@ namespace Core.UI
     public class ResourcesUI : MonoBehaviour, Initialize
     {
         [Header("Components")]
-        [SerializeField]
-        private TMP_Text text_money;
-        [SerializeField]
-        private TMP_Text text_corn;
-        [SerializeField]
-        private TMP_Text text_melon;
-        [SerializeField]
-        private TMP_Text text_strawberry;
+        public TMP_Text text_money;
+        public TMP_Text text_corn;
+        public TMP_Text text_melon;
+        public TMP_Text text_strawberry;
         [Header("Datas")]
-        [SerializeField]
-        private ResourcesData resourcesData;
+        public ResourcesData resourcesData;
         public void Init()
         {
             UpdateResources();

@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bf0f1815f9e4ff4f9bbf7b5328f5fb6, type: 3}
-  m_Name: ResourcesData
+  m_Script: {fileID: 11500000, guid: b219e690f7399f749835fcdf6a687939, type: 3}
+  m_Name: PlantMelon
   m_EditorClassIdentifier: 
-  money: 9505
-  corn: 0
-  melon: 0
-  strawberry: 0
+  plantType: 1
+  price: 10
+  spritePlant: {fileID: 21300088, guid: 2700e06d970d112489ff23cfb58c3f78, type: 3}

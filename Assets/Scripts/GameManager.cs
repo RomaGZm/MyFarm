@@ -5,6 +5,7 @@ using Core.Tiles;
 using Core.Player;
 using Core.UI;
 using Core.DayNight;
+using Core.Resources;
 
 namespace Core
 {
@@ -14,6 +15,7 @@ namespace Core
         public TilesController tilesController;
         public PlayerController playerController;
         public DayNightController dayNightController;
+        public ResourcesController resourcesController;
 
         [Header("UI")]
         [SerializeField]
@@ -32,8 +34,10 @@ namespace Core
                 Destroy(gameObject);
             }
             uIManager.Init();
-            dayNightController.Init();
+            tilesController.Init();
             playerController.Init();
+            dayNightController.Init();
+           
         }
     }
 }

@@ -25,32 +25,46 @@ namespace Core.Player
         public PlayerData playerData;
         [Header("Move")]
         public float moveSpeed = 1;
+        public bool isMove = false;
 
+     
         public void Init()
         {
             toolsController.Init();
+            playerStamina.Init();
         }
 
-        
-        
+
+        Vector3 movement = Vector3.zero;
         void Update()
         {
             float h = Input.GetAxis("Horizontal");
             float v = Input.GetAxis("Vertical");
 
             playerAnimation.Walk(v);
-            Vector3 vect = new Vector3(h, v, 0);
-            vect = vect.normalized * moveSpeed * Time.deltaTime;
-            rb2D.MovePosition(rb2D.transform.position + vect);
-
+            movement = new Vector3(h, v, 0).normalized;
 
             if (Input.GetKeyDown(playerData.inputParam.keyAction))
-            {
-
-            }
+             {
+                toolsController.ToolAction();
+                print(playerData.inputParam.keyAction);
+               
+             }
         }
 
-     
+        void FixedUpdate()
+        {
+            Move(movement); 
+            isMove = rb2D.velocity.magnitude > 0;
+        }
+
+        
+        private void Move(Vector3 direction)
+        {
+          
+            rb2D.velocity = direction * moveSpeed * Time.fixedDeltaTime;
+        }
+
     }
 }
 
