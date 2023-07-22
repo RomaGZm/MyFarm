@@ -1,15 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
-using Core.Interfaces;
 using UnityEngine.Events;
-using System;
 using Core.Player.Tools;
 using Core.Plants;
 
 namespace Core.UI
 {
-    public class ToolsUI : MonoBehaviour, Initialize
+    public class ToolsUI : MonoBehaviour
     {
 
         [Header("Buttons")]
@@ -38,10 +35,10 @@ namespace Core.UI
         public UnityEvent<ToolsController.ToolType> btnToolClick;
         public UnityEvent<Plant.PlantType> btnSeedClick;
 
-        public void Init()
-        {
-           
-        }
+        /// <summary>
+        /// Set selected button
+        /// </summary>
+        /// <param name="toolType"> button type</param>
         public void SetSelected(ToolsController.ToolType toolType)
         {
             switch (toolType)
@@ -64,6 +61,10 @@ namespace Core.UI
             }
 
         }
+        /// <summary>
+        /// Set selected button
+        /// </summary>
+        /// <param name="plantType"></param>
         public void SetSelected(Plant.PlantType plantType)
         {
             switch (plantType)
@@ -80,6 +81,14 @@ namespace Core.UI
             }
 
         }
+        /// <summary>
+        /// Update tools text price in buttons
+        /// </summary>
+        /// <param name="ground"></param>
+        /// <param name="seed"></param>
+        /// <param name="watering"></param>
+        /// <param name="harvest"></param>
+        /// <param name="wither"></param>
         public void UpdateToolsPrice(int ground, int seed, int watering, int harvest,int wither)
         {
             btnGround.SetPrice(ground);
@@ -88,15 +97,33 @@ namespace Core.UI
             btnHarvest.SetPrice(harvest);
             btnWither.SetPrice(wither);
         }
+        /// <summary>
+        /// Update seed price in buttons
+        /// </summary>
+        /// <param name="corn"></param>
+        /// <param name="melon"></param>
+        /// <param name="strawberry"></param>
         public void UpdateSeedPrice(int corn, int melon, int strawberry)
         {
             btnCorn.SetPrice(corn);
             btnMelon.SetPrice(melon);
             btnStrawberry.SetPrice(strawberry);
         }
+        /// <summary>
+        /// Set seed text price
+        /// </summary>
+        /// <param name="price"></param>
         public void SetSeedPrice(int price)
         {
             btnSeed.SetPrice(price);
+        }
+        /// <summary>
+        ///  Set seed icon
+        /// </summary>
+        /// <param name="sprite"></param>
+        public void SetSeedSprite(Sprite sprite)
+        {
+            btnSeed.SetSprite(sprite);
         }
         private void ResetSelectedButtons()
         {
@@ -109,7 +136,10 @@ namespace Core.UI
         }
 
         #region Events
-
+        /// <summary>
+        /// Button tools click event
+        /// </summary>
+        /// <param name="toolType"></param>
         public void OnBtnToolClick(int toolType)
         {
             ResetSelectedButtons();
@@ -145,6 +175,10 @@ namespace Core.UI
             btnMelon.isSelected = false;
             btnStrawberry.isSelected = false;
         }
+        /// <summary>
+        /// Button seed click event
+        /// </summary>
+        /// <param name="seedType"></param>
         public void OnBtnSeedClick(int seedType)
         {
             ResetSeedButtons();

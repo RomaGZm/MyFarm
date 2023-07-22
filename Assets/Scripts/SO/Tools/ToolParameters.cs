@@ -12,6 +12,9 @@ namespace Core.Player.Tools
         public float radius;
         public int price;
         public int staminaPoints;
+        public int actionPoints;
+        public Color toolColor;
+        
 
     }
 

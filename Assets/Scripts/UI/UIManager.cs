@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using Core.Interfaces;
 
@@ -12,12 +11,16 @@ namespace Core.UI
         public ResourcesUI resourcesUI;
         public DayNightUI dayNightUI;
         public ProgressBar progressBarStamina;
+        public ProgressBar progressBarAction;
 
         [Header("Popup")]
         public PopupController popupController;
 
         public static UIManager instance = null;
 
+        /// <summary>
+        /// Initialize ui components
+        /// </summary>
         public void Init()
         {
             if (instance == null)
@@ -30,14 +33,8 @@ namespace Core.UI
             }
 
             popupController.Init();
-            toolsUI.Init();
             resourcesUI.Init();
         }
-        public void OnBtnTestClick()
-        {
-           // popupController.ShowPopup(GameManager.instance.playerController.transform, "2", Popup.Direction.Down, Color.black);
-        }
-
       
     }
 }

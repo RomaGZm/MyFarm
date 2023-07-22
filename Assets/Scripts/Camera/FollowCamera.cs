@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Core.Interfaces;
 
 namespace Core.Cameras
 {
 
-    public class FollowCamera : MonoBehaviour
+    public class FollowCamera : MonoBehaviour, Initialize
     {
 		[Header("Move")]
 		public float minDistance = 0;
@@ -16,15 +17,19 @@ namespace Core.Cameras
 		[Header("Other")]
 		public GameObject target;
 
-		private Vector3 targetPos;
+
+        #region private variabbles
+        private Vector3 targetPos;
 		private float velocity;
-		void Start()
+
+        #endregion
+
+        public void Init()
 		{
 			targetPos = transform.position;
 		}
-
-		
-		void FixedUpdate()
+			
+		private void FixedUpdate()
 		{
 			if (target)
 			{
@@ -32,15 +37,15 @@ namespace Core.Cameras
 				posNoZ.z = target.transform.position.z;
 
 				Vector3 targetDirection = (target.transform.position - posNoZ);
-
 				velocity = targetDirection.magnitude * 5f;
-
 				targetPos = transform.position + (targetDirection.normalized * velocity * Time.deltaTime);
 
 				transform.position = Vector3.Lerp(transform.position, targetPos + offset, moveSpeed);
 
 			}
 		}
-	}
+
+       
+    }
 }
 

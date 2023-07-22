@@ -14,4 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plantType: 2
   price: 15
+  buildTime: 60
+  growthTime: 80
+  maxAmountWater: 300
+  harvestRndMax: 10
   spritePlant: {fileID: 21300096, guid: 2700e06d970d112489ff23cfb58c3f78, type: 3}
+  spriteRemains: {fileID: 21300104, guid: 2700e06d970d112489ff23cfb58c3f78, type: 3}

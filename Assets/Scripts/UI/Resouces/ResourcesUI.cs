@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using Core.Interfaces;
-using UnityEngine.UI;
 using TMPro;
 
 namespace Core.UI
@@ -16,11 +14,15 @@ namespace Core.UI
         public TMP_Text text_strawberry;
         [Header("Datas")]
         public ResourcesData resourcesData;
+        
         public void Init()
         {
             UpdateResources();
         }
 
+        /// <summary>
+        /// Update resources text
+        /// </summary>
         public void UpdateResources()
         {
             text_money.text = resourcesData.money.ToString();

@@ -9,9 +9,11 @@ public class TileData : ScriptableObject
     [System.Serializable]
     public class TileSprites
     {
+        [Header("Tiles")]
         public Sprite sand;
         public Sprite grass;
         public Sprite ground;
+
 
     }
     [Header("Tile sprites")]

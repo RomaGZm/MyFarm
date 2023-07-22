@@ -16,3 +16,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0420efa0bf99b5c4b80ff8ac5ce56c6c, type: 2}
   - {fileID: 11400000, guid: bbd2c81261b7f1441b679d7e574ee522, type: 2}
   - {fileID: 11400000, guid: 0f6bd75eb5788a34ba037837afa332c3, type: 2}
+  "spritePlan\u0435NoWater": {fileID: 21300004, guid: 377d0838804322045b60e51d883c3c1c, type: 3}
+  spriteHarvest: {fileID: 21300012, guid: 377d0838804322045b60e51d883c3c1c, type: 3}
+  spriteRemains: {fileID: 21300014, guid: 377d0838804322045b60e51d883c3c1c, type: 3}

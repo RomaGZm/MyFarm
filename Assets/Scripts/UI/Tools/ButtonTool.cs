@@ -2,7 +2,7 @@
 using UnityEngine;
 using Core.Player.Tools;
 using TMPro;
-
+using UnityEngine.UI;
 namespace Core.UI
 {
     public class ButtonTool : MonoBehaviour
@@ -13,6 +13,8 @@ namespace Core.UI
         private GameObject imageSelected;
         [SerializeField]
         private TMP_Text textPrice;
+        [SerializeField]
+        private Image imageIcon;
 
         public ToolsController.ToolType toolType;
 
@@ -26,10 +28,21 @@ namespace Core.UI
                 imageSelected.SetActive(_isSelected);
             }
         }
-
+       /// <summary>
+       /// Set text button price
+       /// </summary>
+       /// <param name="price"></param>
         public void SetPrice(int price)
         {
             textPrice.text = price.ToString();
+        }
+        /// <summary>
+        /// Set text button icon
+        /// </summary>
+        /// <param name="sprite"></param>
+        public void SetSprite(Sprite sprite)
+        {
+            imageIcon.sprite = sprite;
         }
     }
 

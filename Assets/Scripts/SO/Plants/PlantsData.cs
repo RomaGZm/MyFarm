@@ -8,7 +8,11 @@ public class PlantsData : ScriptableObject
 {
 
     public List<PlantParameters> plantParameters;
-        
+
+    [Header("Plants")]
+    public Sprite spritePlanåNoWater;
+    public Sprite spriteHarvest;
+    public Sprite spriteRemains;
     public PlantParameters GetPlantWithType(Plant.PlantType plantType)
     {
         foreach (PlantParameters tp in plantParameters)

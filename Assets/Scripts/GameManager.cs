@@ -6,6 +6,7 @@ using Core.Player;
 using Core.UI;
 using Core.DayNight;
 using Core.Resources;
+using Core.Cameras;
 
 namespace Core
 {
@@ -16,6 +17,7 @@ namespace Core
         public PlayerController playerController;
         public DayNightController dayNightController;
         public ResourcesController resourcesController;
+        public FollowCamera followCamera;
 
         [Header("UI")]
         [SerializeField]
@@ -37,7 +39,9 @@ namespace Core
             tilesController.Init();
             playerController.Init();
             dayNightController.Init();
-           
+            followCamera.Init();
+
+
         }
     }
 }

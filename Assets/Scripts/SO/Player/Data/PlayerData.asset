@@ -24,3 +24,10 @@ MonoBehaviour:
     staminaMax: 1000
     walkEnergyRecovery_min: 1
     walkEnergyLoss_min: 1
+  skillsParam:
+    level: 1
+    buidPlantsBoostPerLevel: 0.1
+    plantGrowthBoostPerlevel: 0.2
+    actionZoneSizePerlevel: 0.2
+    actionPoints: 0
+    actionNexLevel: 5000

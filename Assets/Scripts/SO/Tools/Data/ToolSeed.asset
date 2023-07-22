@@ -15,6 +15,10 @@ MonoBehaviour:
   toolType: 1
   level: 1
   radius: 2
-  price: 20
+  price: 10
   staminaPoints: 10
-  distance: 0
+  actionPoints: 20
+  toolColor: {r: 0.5330188, g: 1, b: 0.5416488, a: 0.39215687}
+  corn: {fileID: 21300000, guid: ed9b67bd50f5ae946b798d3d8198b700, type: 3}
+  melon: {fileID: 21300000, guid: a2051bb5caa841f4e95c1461893e8647, type: 3}
+  strawberry: {fileID: 21300000, guid: 507e2c255c3f38945ae590a0d25c8685, type: 3}

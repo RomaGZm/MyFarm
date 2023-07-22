@@ -25,8 +25,12 @@ namespace Core.Tiles
 
         public List<Tile> GetTiles(Vector2 pos, float radius)
         {
+            int lvl = GameManager.instance.playerController.playerData.skillsParam.level;
+            float zSize = GameManager.instance.playerController.playerData.skillsParam.actionZoneSizePerlevel;
+            float newRadius = radius + ((lvl * zSize)/2);
+            print(newRadius);
             List<Tile> ret = new List<Tile>();
-            Collider2D[] cols =  Physics2D.OverlapCircleAll(pos, radius, LayerMask.GetMask("Tiles"));
+            Collider2D[] cols =  Physics2D.OverlapCircleAll(pos, newRadius, LayerMask.GetMask("Tiles"));
             foreach(Collider2D col in cols)
             {
                 ret.Add(col.GetComponent<Tile>());

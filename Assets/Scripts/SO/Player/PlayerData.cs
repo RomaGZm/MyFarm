@@ -24,9 +24,26 @@ public class PlayerData : ScriptableObject
         public float walkEnergyRecovery_min;
         public float walkEnergyLoss_min;
     }
+    [System.Serializable]
+    public class SkillsParam
+    {
+        [Header("Level")]
+        [Range(1, 5)]
+        public int level;
+        public float buidPlantsBoostPerLevel;
+        public float plantGrowthBoostPerlevel;
+        public float actionZoneSizePerlevel;
 
+        [Header("Actions")]
+        public int actionPoints;
+        public int actionNexLevel;
+        
+        
+    }
+  
     public InputParam inputParam;
     public StaminaParam staminaParam;
+    public SkillsParam skillsParam;
 
-   
+
 }

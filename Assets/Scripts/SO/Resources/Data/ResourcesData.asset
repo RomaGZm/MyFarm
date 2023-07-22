@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bf0f1815f9e4ff4f9bbf7b5328f5fb6, type: 3}
   m_Name: ResourcesData
   m_EditorClassIdentifier: 
-  money: 9505
+  money: 9405
   corn: 0
   melon: 0
   strawberry: 0

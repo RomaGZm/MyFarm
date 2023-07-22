@@ -9,7 +9,7 @@ namespace Core.Player
   
     public class PlayerStamina : MonoBehaviour, Initialize
     {
-
+        private float _staminaCurrent;
         public float staminaCurrent
         {
             get { return _staminaCurrent; }
@@ -19,11 +19,11 @@ namespace Core.Player
                 UpdateProgress();
             }
         }
-        private float _staminaCurrent;
+        [Header("Player")]
         [SerializeField]
         private PlayerController playerController;
 
-        [Header("")]
+        [Header("Popup Animation Settings")]
         [SerializeField]
         private Vector3 offsetAnimSubStamina;
         [SerializeField]
@@ -43,12 +43,17 @@ namespace Core.Player
             staminaCurrent = playerController.playerData.staminaParam.staminaMax;
        
         }
-
+        /// <summary>
+        /// Update UI Progress Bar
+        /// </summary>
         public void UpdateProgress()
         {
             UIManager.instance.progressBarStamina.SetProgress(playerController.playerData.staminaParam.staminaMin, playerController.playerData.staminaParam.staminaMax, staminaCurrent);
         }
-
+        /// <summary>
+        /// Set stamina value and show popup animation
+        /// </summary>
+        /// <param name="value"></param>
         public void SubStamina(float value)
         {
             if (staminaCurrent - value < 0)
@@ -62,6 +67,10 @@ namespace Core.Player
             }
                 
         }
+        /// <summary>
+        /// Add stamina value and show popup animation
+        /// </summary>
+        /// <param name="value"></param>
         public void AddStamina(float value)
         {
             if (staminaCurrent + value > playerController.playerData.staminaParam.staminaMax)
@@ -80,12 +89,12 @@ namespace Core.Player
         {
             if (playerController.isMove)
             {
-                SubStamina(playerController.playerData.staminaParam.walkEnergyLoss_min);
+               // SubStamina(playerController.playerData.staminaParam.walkEnergyLoss_min);
             }
             else
             {
                 
-                AddStamina(playerController.playerData.staminaParam.walkEnergyRecovery_min);
+              //  AddStamina(playerController.playerData.staminaParam.walkEnergyRecovery_min);
             
             }
        

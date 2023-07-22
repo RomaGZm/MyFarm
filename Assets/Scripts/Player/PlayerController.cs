@@ -13,6 +13,7 @@ namespace Core.Player
         [Header("Components")]
         [SerializeField]
         private Rigidbody2D rb2D;
+        [Header("Controllers")]
         [SerializeField]
         private PlayerAnimation playerAnimation;
         [SerializeField]
@@ -20,6 +21,7 @@ namespace Core.Player
 
         public DetectionZone detectionZone;
         public PlayerStamina playerStamina;
+        public PlayerAction playerAction;
 
         [Header("Datas")]
         public PlayerData playerData;
@@ -27,16 +29,17 @@ namespace Core.Player
         public float moveSpeed = 1;
         public bool isMove = false;
 
-     
+        private Vector3 movement = Vector3.zero;
+
         public void Init()
         {
             toolsController.Init();
             playerStamina.Init();
+            playerAction.Init();
         }
 
-
-        Vector3 movement = Vector3.zero;
-        void Update()
+       
+        private void Update()
         {
             float h = Input.GetAxis("Horizontal");
             float v = Input.GetAxis("Vertical");
@@ -47,12 +50,11 @@ namespace Core.Player
             if (Input.GetKeyDown(playerData.inputParam.keyAction))
              {
                 toolsController.ToolAction();
-                print(playerData.inputParam.keyAction);
                
              }
         }
 
-        void FixedUpdate()
+        private void FixedUpdate()
         {
             Move(movement); 
             isMove = rb2D.velocity.magnitude > 0;
@@ -61,10 +63,20 @@ namespace Core.Player
         
         private void Move(Vector3 direction)
         {
-          
+    
             rb2D.velocity = direction * moveSpeed * Time.fixedDeltaTime;
         }
+        #region events
 
+        /// <summary>
+        /// Called when a player's level increases.
+        /// </summary>
+        public void OnNextLevel()
+        {
+
+            detectionZone.SetRadius(toolsController.currentTool.radius);
+        }
+        #endregion
     }
 }
 

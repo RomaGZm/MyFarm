@@ -17,4 +17,6 @@ MonoBehaviour:
   radius: 1
   price: 2
   staminaPoints: 4
+  actionPoints: 25
+  toolColor: {r: 1, g: 0.6933962, b: 0.6933962, a: 0.39215687}
   distance: 0
